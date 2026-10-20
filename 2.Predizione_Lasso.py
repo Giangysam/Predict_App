@@ -25,13 +25,12 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 
 # ==== stessa configurazione dello script di confronto ====
-CAT_COLS = ["BASE_ID", "BASEGR_ID", "HB_ID", "CB_ID"]   # Colonne categoriche ad alta cardinalità (ID basi/postazioni) — OneHotEncoder. Provare a non considerare HB_ID e CB_ID, che sono ridondanti con BASE_ID
-COL_ORDINALE = "POSITION"  # trattata come numerica: l'ordine ha significato, un one-hot lo distruggerebbe
-COLS_DA_ELIMINARE = ["SCARTO_TE", "SCARTO_CO", "UNGHIA_TE", "UNGHIA_CO", "WIDTH",
-                     "OUTER_DIAMETER", "BASEGR", "IC_ID", "ROTOLO", "SPESSORE_NERO"]    # Colonne da eliminare
-CSV_PATH = "C:\\Users\\Administrator\\Documents\\ML_RIS\\DATI_RIS.csv"
-CSV_NUOVO_RECORD = "C:\\Users\\Administrator\\Documents\\ML_RIS\\Test\\Dati_predizione0_3.csv"  # 1 riga, stesse colonne/sep/decimal di DATI_RIS.csv
-TARGET_COL = "UNGHIA"
+CAT_COLS = ["W", "V", "Z", "AA"]   # Colonne categoriche ad alta cardinalità (ID basi/postazioni) — OneHotEncoder.
+COL_ORDINALE = "R"  # trattata come numerica: l'ordine ha significato, un one-hot lo distruggerebbe
+COLS_DA_ELIMINARE = ["SOGGETTO", "STAT1"]    # Colonne da eliminare
+CSV_PATH = "https://raw.githubusercontent.com/Giangysam/Correlations/main/DATI_RIS_coperti.xlsx"
+CSV_NUOVO_RECORD = "INSERIRE IL PATH DEL FILE DA ESAMINARE.csv"  # 1 riga, stesse colonne/sep/decimal di DATI.csv
+TARGET_COL = "TARGET"
 SEP = ";"
 DECIMAL = ","
 RANDOM_STATE = 42
